@@ -1,0 +1,90 @@
+---------------------------------------------------------
+function Welcome(props) {
+ return <h1>Hello, {props.name}</h1>;
+}
+
+class Custom extends React.Component {
+ render(){
+   return(
+       <>
+       {this.props.name}
+       </>
+   );
+ }
+}
+
+ReactDOM.render(
+ <>
+   <Welcome name="balkar" />
+   <Custom name="balkar singh"/>
+ </>,
+ document.getElementById('root'));
+-------------------------------------------------------
+-----------------------------------------------------
+function Welcome(props) {
+ return <h1>Hello, {props.name}</h1>;
+}
+
+class Custom extends React.Component {
+ render(){
+   return(
+       <>
+       <Welcome name="balkar" />
+       </>
+   );
+ }
+}
+
+ReactDOM.render(
+ <>
+   <Custom/>
+ </>,
+ document.getElementById('root'));
+---------------------------------------
+function Tick() {
+ return(
+   <>
+      <h2>It is {new                Date().toLocaleTimeString()}.</h2>
+     </>
+ );
+}
+ ReactDOM.render(
+   <>
+     <Tick />
+   </>
+   ,
+   document.getElementById('root')
+ );
+npx create-react-app my-app cd my-app npm start
+const Custom = (props) => {
+ return(  props.numbering.map((number)=>
+         <li key={number}>{number}</li>
+     )
+ );
+ 
+}
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+ <Custom numbering={numbers} />,
+ document.getElementById('root')
+);
+-----------------------------------------------------
+class Clock extends React.Component {
+ constructor(props){
+   super(props);
+   this.state = { date: new Date()};
+ }
+ 
+ render(){
+ return (
+   <div>
+     <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+   </div>
+ )
+ }
+}
+
+ ReactDOM.render(
+   <Clock />,
+   document.getElementById('root')
+ );
